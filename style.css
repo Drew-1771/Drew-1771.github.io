@@ -1,25 +1,111 @@
-/* https://codepen.io/Hyperplexed/pen/MWXBRBp */
-body {
-    height: 100vh;
-    width: 100vw;
-    background-color: black;
-    margin: 0rem;
-    overflow: hidden;
+/* stars: https://codepen.io/sarazond/pen/LYGbwj */
+/* General Styles */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+  overflow: hidden;
+}
+
+#stars-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* Star Styling */
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  animation: moveStar 10s linear infinite;
+}
+
+/* Animation for moving stars */
+@keyframes moveStar {
+  0% {
+    transform: translateY(0); /* Start from below viewport */
   }
-  
-  #image-track {
-    display: flex;
-    gap: 4vmin;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(0%, -50%); 
-    user-select: none;
+  100% {
+    transform: translateY(-100vh); /* Move to above viewport */
   }
-  
-  #image-track > .image {
-    width: 40vmin;
-    height: 56vmin;
-    object-fit: cover;
-    object-position: 100% center;
-  }
+}
+
+
+
+/* Profile Card */
+.profile-card {
+  background: rgb(100, 100, 99);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  text-align: center;
+  width: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.profile-image img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 5px;
+}
+
+.profile-info h2 {
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+.profile-info h4 {
+  color: #000000;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.profile-info p {
+  font-size: 14px;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+.profile-skills {
+  display: flex;
+  justify-content: center; /* Center items horizontally */
+}
+
+.profile-skills ul {
+  list-style: none;
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+}
+
+.profile-skills li {
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 14px;
+  color: #000000;
+}
+
+.profile-links a {
+  text-decoration: none;
+  color: white;
+  background-color: #007bff;
+  padding: 8px 15px;
+  border-radius: 15px;
+  font-size: 14px;
+  margin: 10px 0;
+  display: inline-block;
+}
+
+.profile-links a:hover {
+  background-color: #0056b3;
+}
